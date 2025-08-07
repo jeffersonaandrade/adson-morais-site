@@ -1,55 +1,26 @@
 import React from 'react';
 import { Clock, Users, Award, Calendar, BookOpen, Target } from 'lucide-react';
+import { contactConfig, getCourseWhatsAppUrl } from '../config/contact';
 
 const Courses = () => {
   const courses = [
     {
-      title: "Fundamentos da Fisioterapia Moderna",
-      description: "Curso completo sobre as técnicas mais atuais em fisioterapia, incluindo avaliação, diagnóstico e tratamento.",
-      duration: "40 horas",
+      title: contactConfig.course.title,
+      description: contactConfig.course.description,
+      duration: "Formação Completa",
       format: "Presencial",
-      maxStudents: "20 pessoas",
-      level: "Iniciante a Intermediário",
+      maxStudents: "Turmas Reduzidas",
+      level: "Formação Profissional",
       topics: [
-        "Anatomia aplicada",
-        "Técnicas de avaliação",
-        "Protocolos de tratamento",
-        "Casos clínicos práticos"
+        "Fundamentos da Quiropraxia",
+        "Técnicas de Avaliação Clínica",
+        "Manipulações Vertebrais",
+        "Protocolos de Tratamento",
+        "Casos Clínicos Práticos",
+        "Certificação Reconhecida"
       ],
-      price: "R$ 1.200",
-      status: "Próxima turma em Março"
-    },
-    {
-      title: "Osteopatia Estrutural",
-      description: "Especialização em técnicas osteopáticas para tratamento de disfunções estruturais e biomecânicas.",
-      duration: "60 horas",
-      format: "Híbrido",
-      maxStudents: "15 pessoas",
-      level: "Intermediário a Avançado",
-      topics: [
-        "Princípios da osteopatia",
-        "Técnicas de manipulação",
-        "Diagnóstico osteopático",
-        "Tratamento integrado"
-      ],
-      price: "R$ 2.500",
-      status: "Inscrições abertas"
-    },
-    {
-      title: "Terapia Crânio Sacral Avançada",
-      description: "Curso avançado em terapia crânio sacral com foco em técnicas sutis e tratamento do sistema nervoso.",
-      duration: "30 horas",
-      format: "Presencial",
-      maxStudents: "12 pessoas",
-      level: "Avançado",
-      topics: [
-        "Sistema crânio sacral",
-        "Técnicas de palpação",
-        "Liberação de restrições",
-        "Protocolos específicos"
-      ],
-      price: "R$ 1.800",
-      status: "Em breve"
+      price: contactConfig.course.price,
+      status: "Inscrições Abertas"
     }
   ];
 
@@ -59,16 +30,16 @@ const Courses = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Cursos e <span className="text-primary">Capacitações</span>
+            Curso de <span className="text-primary">Formação</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Aprimore seus conhecimentos com cursos ministrados por um profissional 
-            experiente e reconhecido na área da fisioterapia.
+            Formação completa e profissionalizante ministrada por especialista 
+            reconhecido pelo Coffito na área da Quiropraxia.
           </p>
         </div>
 
         {/* Cursos Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-8 max-w-4xl mx-auto">
           {courses.map((course, index) => (
             <div 
               key={index} 
@@ -167,13 +138,13 @@ const Courses = () => {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <a
-            href="https://wa.me/5581999999999"
+            href={getCourseWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold"
           >
             <Calendar size={20} />
-            <span>Saiba mais sobre os cursos</span>
+            <span>Saiba mais sobre o curso</span>
           </a>
         </div>
       </div>

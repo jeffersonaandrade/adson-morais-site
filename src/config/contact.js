@@ -61,6 +61,14 @@ export const contactConfig = {
     experience: "10+",
     patients: "500+",
     specialties: "5"
+  },
+  
+  // Informações do Curso
+  course: {
+    title: "Curso de Formação Completa de Quiropraxia Clínica",
+    price: "R$ 1.800",
+    description: "Formação completa e profissionalizante em Quiropraxia Clínica, ministrado por especialista reconhecido pelo Coffito.",
+    whatsappMessage: "Olá! Gostaria de saber mais sobre o Curso de Formação Completa de Quiropraxia Clínica."
   }
 };
 
@@ -81,4 +89,10 @@ export const getEmailUrl = () => {
 // Funções para redes sociais
 export const getInstagramUrl = () => {
   return contactConfig.social.instagram.url;
+};
+
+// Função para curso
+export const getCourseWhatsAppUrl = () => {
+  const message = contactConfig.course.whatsappMessage;
+  return `${contactConfig.whatsapp.url}?text=${encodeURIComponent(message)}`;
 };

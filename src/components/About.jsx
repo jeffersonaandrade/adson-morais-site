@@ -66,11 +66,20 @@ const About = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Formação e Especialização</h3>
               <ul className="space-y-2 text-gray-600">
                 <li>• Fisioterapeuta - Graduação em Fisioterapia</li>
-                <li>• Especialização em Osteopatia</li>
-                <li>• Certificação em Terapia Crânio Sacral</li>
-                <li>• Especialização em Liberação Miofascial Instrumental</li>
-                <li>• Formação em Quiropraxia</li>
+                <li>• <strong>Especialista em Quiropraxia segundo o Coffito</strong></li>
+                <li>• Formação em Osteopatia</li>
+                <li>• Certificação na Terapia Crânio Sacral</li>
+                <li>• Especialização em Acupuntura método Distal</li>
+                <li>• Especialização em Liberação Miofacial Instrumental</li>
               </ul>
+            </div>
+
+            {/* Coordenação */}
+            <div className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Coordenação Acadêmica</h3>
+              <p className="text-gray-700 font-medium">
+                Coordenador da Pós-Graduação em Quiropraxia do Instituto Paiva - Recife
+              </p>
             </div>
 
             {/* Valores */}
