@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Calendar, X } from 'lucide-react';
+import { getWhatsAppUrl, contactConfig } from '../config/contact';
 
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,15 +23,12 @@ const WhatsAppFloat = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5581999999999";
-    const message = "Olá! Gostaria de agendar uma consulta com o Dr. Adson Morais.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = getWhatsAppUrl();
     window.open(whatsappUrl, '_blank');
   };
 
   const handleCalendarClick = () => {
-    const doctoraliaUrl = "https://www.doctoralia.com.br/";
-    window.open(doctoraliaUrl, '_blank');
+    window.open(contactConfig.doctoralia.url, '_blank');
   };
 
   if (!isVisible) return null;
@@ -39,7 +37,7 @@ const WhatsAppFloat = () => {
     <>
       {/* Tooltip */}
       {showTooltip && (
-        <div className="fixed bottom-32 right-6 z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs animate-bounce">
+        <div className="fixed bottom-40 right-6 z-50 bg-white rounded-lg shadow-lg p-4 max-w-xs animate-bounce">
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <p className="text-sm font-medium text-gray-900 mb-1">

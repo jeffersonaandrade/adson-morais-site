@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import logoImage from '../assets/WhatsAppImage2025-08-05at10.33.43.jpeg';
+import { getInstagramUrl } from '../config/contact';
 
 const Footer = () => {
   return (
@@ -22,14 +23,14 @@ const Footer = () => {
               avançadas para sua saúde e bem-estar.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-200">
+              <a 
+                href={getInstagramUrl()} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-primary transition-colors duration-200"
+                title="Siga no Instagram"
+              >
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-200">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-200">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>

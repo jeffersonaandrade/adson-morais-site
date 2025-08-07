@@ -1,42 +1,37 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Instagram } from 'lucide-react';
+import { contactConfig, getWhatsAppUrl, getPhoneUrl, getEmailUrl, getInstagramUrl } from '../config/contact';
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Phone,
       title: "Telefone",
-      info: "(81) 99999-9999",
-      action: "tel:+5581999999999",
+      info: contactConfig.phone,
+      action: getPhoneUrl(),
       actionText: "Ligar agora"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      info: "(81) 99999-9999",
-      action: "https://wa.me/5581999999999",
+      info: contactConfig.phone,
+      action: getWhatsAppUrl(),
       actionText: "Enviar mensagem"
     },
     {
       icon: Mail,
       title: "E-mail",
-      info: "contato@adsonmorais.com",
-      action: "mailto:contato@adsonmorais.com",
+      info: contactConfig.email,
+      action: getEmailUrl(),
       actionText: "Enviar e-mail"
     },
     {
       icon: MapPin,
       title: "Localização",
-      info: "Recife, PE",
+      info: contactConfig.location,
       action: "#",
       actionText: "Ver no mapa"
     }
-  ];
-
-  const schedule = [
-    { day: "Segunda a Sexta", hours: "8h às 18h" },
-    { day: "Sábado", hours: "8h às 12h" },
-    { day: "Domingo", hours: "Fechado" }
   ];
 
   return (
@@ -97,7 +92,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  {schedule.map((item, index) => (
+                  {contactConfig.schedule.map((item, index) => (
                     <div key={index} className="flex justify-between items-center">
                       <span className="text-gray-600">{item.day}</span>
                       <span className="font-medium text-gray-900">{item.hours}</span>
@@ -121,22 +116,13 @@ const Contact = () => {
               
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href={getInstagramUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors duration-200"
+                  title="Siga no Instagram"
                 >
                   <Instagram size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center w-12 h-12 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors duration-200"
-                >
-                  <Facebook size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center justify-center w-12 h-12 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors duration-200"
-                >
-                  <Linkedin size={20} />
                 </a>
               </div>
             </div>
@@ -153,7 +139,7 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/5581999999999"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-3 bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors duration-200 w-full"
@@ -163,7 +149,9 @@ const Contact = () => {
                 </a>
                 
                 <a
-                  href="#"
+                  href={contactConfig.doctoralia.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-3 bg-white text-primary px-6 py-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 w-full"
                 >
                   <Calendar size={20} />
@@ -189,7 +177,7 @@ const Contact = () => {
                       Tem dúvidas sobre algum tratamento específico? Entre em contato via WhatsApp para uma consulta personalizada.
                     </p>
                     <a
-                      href="https://wa.me/5581999999999"
+                      href={getWhatsAppUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium"
@@ -209,7 +197,7 @@ const Contact = () => {
                       Agende sua consulta de forma rápida e segura através do Doctoralia ou WhatsApp.
                     </p>
                     <a
-                      href="https://www.doctoralia.com.br/"
+                      href={contactConfig.doctoralia.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium"
@@ -229,7 +217,7 @@ const Contact = () => {
                       Interessado em nossos cursos? Envie um e-mail para mais informações sobre datas e valores.
                     </p>
                     <a
-                      href="mailto:contato@adsonmorais.com"
+                      href={getEmailUrl()}
                       className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium"
                     >
                       Enviar e-mail →

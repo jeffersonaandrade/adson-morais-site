@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
 import logoImage from '../assets/WhatsAppImage2025-08-05at10.33.43.jpeg';
+import { getWhatsAppUrl, contactConfig } from '../config/contact';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ const Header = () => {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://wa.me/5581999999999"
+              href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200"
@@ -56,7 +57,7 @@ const Header = () => {
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://www.doctoralia.com.br/"
+              href={contactConfig.doctoralia.url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
@@ -93,7 +94,7 @@ const Header = () => {
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-4">
                 <a
-                  href="https://wa.me/5581999999999"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200"
@@ -102,7 +103,7 @@ const Header = () => {
                   <span>WhatsApp</span>
                 </a>
                 <a
-                  href="https://www.doctoralia.com.br/"
+                  href={contactConfig.doctoralia.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200"
