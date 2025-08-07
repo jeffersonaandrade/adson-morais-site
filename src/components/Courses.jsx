@@ -93,9 +93,14 @@ const Courses = () => {
                     <div className="text-sm text-gray-500">{course.status}</div>
                   </div>
                   
-                  <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold">
+                  <a
+                    href={getCourseWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold flex items-center justify-center"
+                  >
                     Mais Informações
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
