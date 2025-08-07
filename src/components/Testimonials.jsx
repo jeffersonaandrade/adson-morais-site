@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import { getWhatsAppUrl, contactConfig } from '../config/contact';
 
 const Testimonials = () => {
   const testimonials = [
@@ -152,7 +153,7 @@ const Testimonials = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5581999999999"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold"
@@ -160,7 +161,9 @@ const Testimonials = () => {
                 Falar no WhatsApp
               </a>
               <a
-                href="#"
+                href={contactConfig.doctoralia.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold"
               >
                 Agendar Consulta
