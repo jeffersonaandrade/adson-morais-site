@@ -7,6 +7,14 @@ export const contactConfig = {
     url: "https://wa.me/558799498484"
   },
   
+  // Mensagens específicas do WhatsApp
+  whatsappMessages: {
+    consulta: "Olá! Gostaria de agendar uma consulta com o Dr. Adson Morais.",
+    curso: "Olá! Gostaria de saber mais sobre o Curso de Formação Completa de Quiropraxia Clínica.",
+    duvidas: "Olá! Tenho dúvidas sobre os tratamentos oferecidos pelo Dr. Adson Morais.",
+    orcamento: "Olá! Gostaria de saber mais sobre valores e horários de atendimento."
+  },
+  
   // Informações do Doctoralia
   doctoralia: {
     url: "https://www.doctoralia.com.br/adson-de-morais-ferreira/quiropraxista/recife",
@@ -23,14 +31,14 @@ export const contactConfig = {
   
   // Informações gerais de contato
   phone: "(87) 99949-8484",
-  email: "contato@adsonmorais.com",
-  location: "Recife, PE",
+  email: "adson.fisio@outlook.com",
+  location: "Avenida Engenheiro Domingos Ferreira, 467 - BV - Empresarial da Moura Dubeux - Sala 403, Recife, PE",
   
   // Endereços dos consultórios
   offices: [
     {
       name: "CAF - CENTRO AVANÇADO DE FISIOTERAPIA",
-      address: "Avenida Engenheiro Domingos Ferreira, 467 - Boa Viagem, Recife",
+      address: "Avenida Engenheiro Domingos Ferreira, 467 - BV - Empresarial da Moura Dubeux - Sala 403",
       phone: "(87) 99949-8484"
     },
     {
@@ -67,14 +75,18 @@ export const contactConfig = {
   course: {
     title: "Curso de Formação Completa de Quiropraxia Clínica",
     price: "R$ 1.800",
-    description: "Formação completa e profissionalizante em Quiropraxia Clínica, ministrado por especialista reconhecido pelo Coffito.",
-    whatsappMessage: "Olá! Gostaria de saber mais sobre o Curso de Formação Completa de Quiropraxia Clínica."
+    description: "Formação completa e profissionalizante em Quiropraxia Clínica, ministrado por especialista reconhecido pelo Coffito."
   }
 };
 
 // Funções utilitárias
 export const getWhatsAppUrl = (customMessage = null) => {
   const message = customMessage || contactConfig.whatsapp.message;
+  return `${contactConfig.whatsapp.url}?text=${encodeURIComponent(message)}`;
+};
+
+export const getWhatsAppUrlByType = (type = 'consulta') => {
+  const message = contactConfig.whatsappMessages[type] || contactConfig.whatsappMessages.consulta;
   return `${contactConfig.whatsapp.url}?text=${encodeURIComponent(message)}`;
 };
 
@@ -93,6 +105,5 @@ export const getInstagramUrl = () => {
 
 // Função para curso
 export const getCourseWhatsAppUrl = () => {
-  const message = contactConfig.course.whatsappMessage;
-  return `${contactConfig.whatsapp.url}?text=${encodeURIComponent(message)}`;
+  return getWhatsAppUrlByType('curso');
 };

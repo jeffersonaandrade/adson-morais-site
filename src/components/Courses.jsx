@@ -7,10 +7,10 @@ const Courses = () => {
     {
       title: contactConfig.course.title,
       description: contactConfig.course.description,
-      duration: "Formação Completa",
+      duration: "120 horas",
       format: "Presencial",
-      maxStudents: "Turmas Reduzidas",
-      level: "Formação Profissional",
+      maxStudents: "26 alunos",
+      level: "De Iniciantes a Profissionais",
       topics: [
         "Fundamentos da Quiropraxia",
         "Técnicas de Avaliação Clínica",
@@ -127,7 +127,7 @@ const Courses = () => {
                 <Users className="text-primary" size={32} />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Turmas Reduzidas</h4>
-              <p className="text-gray-600">Atendimento personalizado com turmas de no máximo 20 alunos.</p>
+              <p className="text-gray-600">Atendimento personalizado com turmas de no máximo 26 alunos.</p>
             </div>
             
             <div className="text-center">

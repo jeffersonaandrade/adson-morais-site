@@ -1,8 +1,14 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Instagram } from 'lucide-react';
-import { contactConfig, getWhatsAppUrl, getPhoneUrl, getEmailUrl, getInstagramUrl } from '../config/contact';
+import { contactConfig, getWhatsAppUrl, getPhoneUrl, getEmailUrl, getInstagramUrl, getWhatsAppUrlByType } from '../config/contact';
 
 const Contact = () => {
+  // Função para gerar link do Google Maps
+  const getGoogleMapsUrl = () => {
+    const address = encodeURIComponent(contactConfig.location);
+    return `https://www.google.com/maps/search/?api=1&query=${address}`;
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -15,7 +21,7 @@ const Contact = () => {
       icon: MessageCircle,
       title: "WhatsApp",
       info: contactConfig.phone,
-      action: getWhatsAppUrl(),
+      action: getWhatsAppUrlByType('consulta'),
       actionText: "Enviar mensagem"
     },
     {
@@ -29,7 +35,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Localização",
       info: contactConfig.location,
-      action: "#",
+      action: getGoogleMapsUrl(),
       actionText: "Ver no mapa"
     }
   ];
@@ -139,7 +145,7 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <a
-                  href={getWhatsAppUrl()}
+                  href={getWhatsAppUrlByType('consulta')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-3 bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors duration-200 w-full"
@@ -177,7 +183,7 @@ const Contact = () => {
                       Tem dúvidas sobre algum tratamento específico? Entre em contato via WhatsApp para uma consulta personalizada.
                     </p>
                     <a
-                      href={getWhatsAppUrl()}
+                      href={getWhatsAppUrlByType('duvidas')}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium"

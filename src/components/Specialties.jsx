@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart, Brain, Bone, Hand, Zap } from 'lucide-react';
-import { getWhatsAppUrl, contactConfig } from '../config/contact';
+import { getWhatsAppUrlByType, contactConfig } from '../config/contact';
 
 const Specialties = () => {
   const specialties = [
@@ -95,7 +95,7 @@ const Specialties = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrlByType('duvidas')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold"

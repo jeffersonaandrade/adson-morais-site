@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import logoImage from '../assets/WhatsAppImage2025-08-05at10.33.43.jpeg';
-import { getInstagramUrl } from '../config/contact';
+import { getInstagramUrl, contactConfig } from '../config/contact';
 
 const Footer = () => {
   return (
@@ -54,15 +54,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-primary" />
-                <span className="text-gray-300">(81) 99999-9999</span>
+                <span className="text-gray-300">{contactConfig.phone}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-primary" />
-                <span className="text-gray-300">contato@adsonmorais.com</span>
+                <span className="text-gray-300">{contactConfig.email}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-primary" />
-                <span className="text-gray-300">Recife, PE</span>
+                <span className="text-gray-300">{contactConfig.location}</span>
               </div>
             </div>
           </div>

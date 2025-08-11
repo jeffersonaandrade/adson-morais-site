@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Calendar, CheckCircle } from 'lucide-react';
 import heroImage from '../assets/WhatsAppImage2025-08-05at10.28.50(1).jpeg';
-import { getWhatsAppUrl, contactConfig } from '../config/contact';
+import { getWhatsAppUrlByType, contactConfig } from '../config/contact';
 
 const Hero = () => {
   return (
@@ -33,7 +33,7 @@ const Hero = () => {
             {/* Botões de ação */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrlByType('consulta')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-all duration-200 transform hover:scale-105 shadow-lg"

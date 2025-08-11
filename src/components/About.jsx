@@ -55,9 +55,9 @@ const About = () => {
                 humanizada.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Minha missão é ajudar cada paciente a alcançar seu máximo potencial de saúde 
+                "Minha missão é ajudar cada paciente a alcançar seu máximo potencial de saúde 
                 e bem-estar, utilizando as mais modernas técnicas de fisioterapia, osteopatia, 
-                terapia crânio sacral, liberação miofascial instrumental e quiropraxia.
+                terapia crânio sacral, liberação miofascial instrumental e quiropraxia."	
               </p>
             </div>
 
